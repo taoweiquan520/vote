@@ -1,0 +1,32 @@
+{
+  "name": "vote",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "ndk-builder build",
+    "dev": "ndk-builder dev",
+    "format": "prettier --write \"**/*{.css,.js,.json,.jsx,.less,.mjs,.ts,.tsx,.vue}\"",
+    "lint": "npm run format && eslint --fix --ext \".js,.jsx,.mjs,.ts,.tsx,.vue\" .",
+    "serve": "vue-cli-service serve"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "core-js": "^2.6.9",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.2",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@nuofe/eslint-config-vue": "7.2.0",
+    "@nuofe/ndk-builder": "7.2.0",
+    "@vue/cli-service": "^3.11.0",
+    "eslint": "^5.16.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.3",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "browserslist": [
+    "Android >= 6",
+    "iOS >= 9"
+  ]
+}
