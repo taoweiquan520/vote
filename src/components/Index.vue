@@ -52,6 +52,7 @@ export default {
   justify-content: space-between;
   img {
     width: 80px;
+    height: 111px;
   }
 }
 .btn-wrap {

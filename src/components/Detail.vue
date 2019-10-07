@@ -21,7 +21,7 @@
         </div>
         <div class="item-handler">
           <a>投TA一票</a>
-          <a>分享助力</a>
+          <a @click="share">分享助力</a>
         </div>
       </div>
     </div>
@@ -62,7 +62,51 @@ export default {
       video: '',
     };
   },
-  methods: {},
+  mounted() {
+    wx.config({
+      debug: false, // 调试的bug的
+      appId: '',
+      timestamp: '',
+      nonceStr: '',
+      signature: '',
+      jsApiList: ['onMenuSareTimeline', 'onMenuShareAppMessage'],
+    });
+  },
+  methods: {
+    share() {
+      if (typeof WeixinJSBridge === 'undefined') {
+        alert(' 请先通过微信搜索 wow36kr 添加36氪为好友，通过微信分享文章 :) ');
+      } else {
+        WeixinJSBridge &&
+          WeixinJSBridge.invoke('shareTimeline', {
+            title: '36氪',
+            link: 'http://www.36kr.com',
+            desc: ' 关注互联网创业 ',
+            img_url: 'http://www.36kr.com/assets/images/apple-touch-icon.png',
+          });
+      }
+    },
+    // 分享到朋友圈
+    weixinShareTimeline(title, desc, link, imgUrl) {
+      WeixinJSBridge &&
+        WeixinJSBridge.invoke('shareTimeline', {
+          img_url: imgUrl,
+          link,
+          desc,
+          title,
+        });
+    },
+    // 分享给朋友
+    weixinSendAppMessage(title, desc, link, imgUrl) {
+      WeixinJSBridge &&
+        WeixinJSBridge.invoke('sendAppMessage', {
+          img_url: imgUrl,
+          link,
+          desc,
+          title,
+        });
+    },
+  },
 };
 </script>
 
