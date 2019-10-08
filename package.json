@@ -11,10 +11,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
+    "axios": "^0.19.0",
     "core-js": "^2.6.9",
+    "feui": "^0.6.7",
+    "qs": "^6.9.0",
     "vue": "^2.6.10",
     "vue-router": "^3.1.2",
-    "vuex": "^3.1.1"
+    "vuex": "^3.1.1",
+    "weixin-js-sdk": "^1.3.2"
   },
   "devDependencies": {
     "@nuofe/eslint-config-vue": "7.2.0",

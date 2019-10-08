@@ -1,0 +1,21 @@
+@import "./vars.less";
+.v-btn,
+.v-input {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: @fontSize;
+  box-sizing: border-box;
+}
+
+.placeHolder() {
+  color: #999;
+}
+.v-input::-webkit-input-placeholder {
+  /* Firefox版本19+ */
+  .placeHolder();
+}
+.v-input::-moz-placeholder {
+  .placeHolder();
+}
